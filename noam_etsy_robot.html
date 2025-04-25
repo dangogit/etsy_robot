@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>הצעת פיתוח – רובוט מחקר שוק Etsy</title>
+<style>
+  body{font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:0;background:#f5f7fa;color:#1e293b;line-height:1.6}
+  header{background:linear-gradient(135deg,#111827,#374151);color:#ffffff;padding:32px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+  h1,h2,h3{margin:0 0 16px;font-weight:600}
+  h1{font-size:2rem}
+  h2{font-size:1.5rem;color:#1e40af;border-bottom:2px solid #e5e7eb;padding-bottom:8px}
+  section{background:#ffffff;margin:24px auto;padding:28px 32px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.08);max-width:1020px;transition:transform 0.2s}
+  section:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1)}
+  table{width:100%;border-collapse:collapse;margin-top:16px;font-size:0.95rem}
+  th,td{border:1px solid #e5e7eb;padding:10px;text-align:center}
+  th{background:#f1f5f9;font-weight:600;position:sticky;top:0}
+  tr:nth-child(even){background-color:#f8fafc}
+  tr:hover{background-color:#f0f9ff}
+  .badge{display:inline-block;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:500}
+  .risk-high{background:#fee2e2;color:#b91c1c}
+  .risk-medium{background:#fff7ed;color:#c2410c}
+  .risk-low{background:#f0fdf4;color:#166534}
+  .success{background:#dcfce7;color:#166534}
+  ul{margin:0 0 0 20px;padding:0 0 0 20px}
+  li{margin-bottom:8px}
+  footer{text-align:center;font-size:14px;margin:32px;color:#64748b}
+  .card{border-radius:8px;padding:16px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);background:#f8fafc}
+  .logo-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:24px}
+  .tech-logo{height:40px;opacity:0.7;transition:opacity 0.2s}
+  .tech-logo:hover{opacity:1}
+  .highlight{background:#ebf8ff;padding:12px 16px;border-radius:8px;border-left:4px solid #3b82f6;margin:16px 0}
+  @media (max-width: 768px) {
+    section{padding:20px;margin:16px}
+    table{font-size:0.85rem}
+    th,td{padding:8px 4px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>רובוט מחקר שוק ל-Etsy – תכנית עבודה</h1>
+  <p>אינטגרציה עם פרונטאנד קיים ופיתוח צד שרת מבוסס Supabase</p>
+</header>
+
+<section>
+  <h2>תקציר</h2>
+  <p>
+    מטרת הפרויקט: פיתוח צד-שרת המתחבר ל-API של Etsy ומספק תובנות,
+    מחקר מילות מפתח וטרנדים בזמן אמת עבור בעלי חנויות Etsy.
+  </p>
+  <div class="highlight">
+    <strong>חשוב:</strong> הפרונטאנד פותח ב-Base44 ומוכן לשימוש. הפרויקט מתמקד באינטגרציה עם ממשק המשתמש הקיים ופיתוח שכבת הבאקאנד על תשתית Supabase.
+  </div>
+  <div class="logo-container">
+    <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" class="tech-logo">
+    <img src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg" alt="Supabase" class="tech-logo">
+    <img src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" alt="PostgreSQL" class="tech-logo">
+    <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="TypeScript" class="tech-logo">
+    <img src="https://cdn.worldvectorlogo.com/logos/etsy.svg" alt="Etsy" class="tech-logo">
+    <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" class="tech-logo">
+  </div>
+</section>
+
+<section>
+  <h2>לוח זמנים</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>יום</th><th>משימה עיקרית</th><th>תוצר</th><th>רמת סיכון</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>קבלת קוד פרונטאנד, הקמת ריפו משותף ומפתחות API</td><td>סביבה רצה מקומית</td><td><span class="badge risk-low">נמוך</span></td></tr>
+      <tr><td>2</td><td>הקמת Supabase, סכמת DB, חיבור ראשוני</td><td>PostgreSQL + סכמה מוגדרת</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+      <tr><td>3</td><td>יישום OAuth 2.0 מול Etsy (דרך Supabase Auth)</td><td>Token תקין בבדיקה</td><td><span class="badge risk-high">גבוה</span></td></tr>
+      <tr><td>4</td><td>API Contract והתאמה לפרונטאנד</td><td>מסמך Swagger</td><td><span class="badge risk-low">נמוך</span></td></tr>
+      <tr><td>5</td><td>Fetcher ראשוני לחיפוש מילים</td><td>JSON גולמי בממשק REST</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+
+      <tr><td>6</td><td>שכבת Cache (Supabase Realtime + Redis)</td><td>שיפור Latency</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+      <tr><td>7</td><td>חישוב סטטיסטיקות מחירים וביקוש</td><td>Metric Service</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+      <tr><td>8</td><td>Cron לאיסוף טרנדים יומי (Supabase Edge Functions)</td><td>Historical Table</td><td><span class="badge risk-low">נמוך</span></td></tr>
+      <tr><td>9</td><td>שמירת חיפושים מועדפים (Supabase Storage)</td><td>Endpoint ‎/saved</td><td><span class="badge risk-low">נמוך</span></td></tr>
+      <tr><td>10</td><td>אינטגרציה עם UI של מילות-מפתח (Base44)</td><td>טבלת נתונים פעילה</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+
+      <tr><td>11</td><td>יצירת תובנות AI (OpenAI GPT + Supabase Postgres)</td><td>תקצירי Trend</td><td><span class="badge risk-high">גבוה</span></td></tr>
+      <tr><td>12</td><td>תורים לעיבוד רקע (Supabase Functions)</td><td>Worker רץ</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+      <tr><td>13</td><td>התראות אימייל (Supabase + Resend)</td><td>Webhook מוגדר</td><td><span class="badge risk-low">נמוך</span></td></tr>
+      <tr><td>14</td><td>מערכת הרשאות מורחבת (Supabase Auth + RLS)</td><td>Sessions מאובטחים</td><td><span class="badge risk-high">גבוה</span></td></tr>
+      <tr><td>15</td><td>דפלוי Staging (Vercel + Supabase)</td><td>URL חי</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+
+      <tr><td>16</td><td>בדיקה והתאמת ממשק RTL (Base44 UI)</td><td>UI מותאם מושלם</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+      <tr><td>17</td><td>לוגים ומוניטורינג (Supabase Metrics)</td><td>Dashboard תפעולי</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+      <tr><td>18</td><td>בדיקות אינטגרציה</td><td>‎90% כיסוי</td><td><span class="badge risk-medium">בינוני</span></td></tr>
+      <tr><td>19</td><td>תיקוני באגים ופוליש</td><td>גרסת RC</td><td><span class="badge risk-low">נמוך</span></td></tr>
+      <tr><td>20</td><td>דפלוי Production והעברה ללקוח</td><td><span class="badge success">השקה</span></td><td><span class="badge risk-high">גבוה</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>אבני דרך שבועיות</h2>
+  <div class="card">
+    <strong>סוף שבוע 1 –</strong> אינטגרציה ראשונית עם פרונטאנד Base44, הקמת Supabase והחזרת נתוני חיפוש בזמן אמת.
+  </div>
+  <div class="card">
+    <strong>סוף שבוע 2 –</strong> מחקר מילות-מפתח מלא עם Supabase Realtime, הטמעה בממשק המשתמש הקיים.
+  </div>
+  <div class="card">
+    <strong>סוף שבוע 3 –</strong> מודול תובנות AI והודעות אימייל, אינטגרציה מלאה עם Supabase Auth.
+  </div>
+  <div class="card">
+    <strong>סוף שבוע 4 –</strong> בדיקות, QA, ודפלוי פרודקשן מלא (Vercel + Supabase).
+  </div>
+</section>
+
+<section>
+  <h2>ארכיטקטורה ושירותים</h2>
+  <table>
+    <thead>
+      <tr><th>רכיב</th><th>טכנולוגיה</th><th>יתרונות</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>פרונטאנד</td>
+        <td>קוד קיים מ-Base44 (React)</td>
+        <td>נחסך זמן פיתוח UI, ממשק מוכח שעובד</td>
+      </tr>
+      <tr>
+        <td>בסיס נתונים</td>
+        <td>Supabase (PostgreSQL)</td>
+        <td>יכולות מתקדמות, עבודה עם JSON, RLS מובנה</td>
+      </tr>
+      <tr>
+        <td>אחסון קבצים</td>
+        <td>Supabase Storage</td>
+        <td>אינטגרציה מלאה עם Auth ו-Row Level Security</td>
+      </tr>
+      <tr>
+        <td>אימות</td>
+        <td>Supabase Auth + OAuth</td>
+        <td>מערכת מוכנה לשימוש, יכולות Enterprise</td>
+      </tr>
+      <tr>
+        <td>Edge Functions</td>
+        <td>Supabase Edge Functions</td>
+        <td>זמינות גלובלית, יכולות Serverless</td>
+      </tr>
+      <tr>
+        <td>Realtime</td>
+        <td>Supabase Realtime</td>
+        <td>עדכוני נתונים חיים למשתמש, התראות בזמן אמת</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>שירותים ותמחור</h2>
+  <table>
+    <thead>
+      <tr><th>כלי</th><th>שכבת חינם</th><th>שכבה מקצועית (אופציונלי)</th><th>הערות</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Vercel</td><td>0 $/<small>100 GB-hr</small></td><td>20 $/חודש – Pro</td><td>אירוח פרונטאנד</td></tr>
+      <tr><td>Supabase</td><td>0 $/<small>500 MB + 2 GB bandwidth</small></td><td>25 $/חודש – Pro</td><td>בסיס נתונים + Auth + Storage + Realtime</td></tr>
+      <tr><td>OpenAI API</td><td>—</td><td>‎~0.002 $/1K Tokens (לפי שימוש)</td><td>ניתוח תובנות</td></tr>
+      <tr><td>Etsy Developer API</td><td>0 $ – ‎5 req/שנייה</td><td>—</td><td>איסוף נתונים</td></tr>
+      <tr><td>Resend Email</td><td>0 $/<small>100 אימיילים/יום</small></td><td>20 $/חודש – 50k אימיילים</td><td>התראות ודוחות</td></tr>
+      <tr><td>Cloudflare</td><td>0 $</td><td>20 $/חודש – Pro</td><td>אבטחה והגנת DDoS</td></tr>
+    </tbody>
+  </table>
+</section>
+<br>
+<section>
+  <h2>הערכת סיכונים</h2>
+  <table>
+    <thead>
+      <tr><th>סיכון</th><th>השפעה</th><th>דרכי התמודדות</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>מגבלות API של Etsy</td>
+        <td><span class="badge risk-high">גבוה</span></td>
+        <td>
+          <ul>
+            <li>תכנון מערכת תורים וניהול קריאות</li>
+            <li>יישום מנגנון Backoff אדפטיבי</li>
+            <li>קאש אגרסיבי לבקשות נפוצות</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>אינטגרציה עם פרונטאנד קיים</td>
+        <td><span class="badge risk-medium">בינוני</span></td>
+        <td>
+          <ul>
+            <li>תיעוד API מפורט</li>
+            <li>סנכרון גרסאות עם צוות Base44</li>
+            <li>פיתוח TDD עם מבדקי אינטגרציה</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>שינויים ב-API של Etsy</td>
+        <td><span class="badge risk-medium">בינוני</span></td>
+        <td>
+          <ul>
+            <li>מעקב שוטף אחר שינויים</li>
+            <li>מודל אדפטר גמיש</li>
+            <li>בדיקות אוטומטיות יומיות</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>ביצועי מערכת בעומס</td>
+        <td><span class="badge risk-medium">בינוני</span></td>
+        <td>
+          <ul>
+            <li>שכבת קאש מתקדמת</li>
+            <li>ניצול יעיל של Supabase RPC</li>
+            <li>פיצול לוגיקה מורכבת ל-Edge Functions</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>הצעת מחיר</h2>
+  <div style="text-align:center; padding:24px; background:#f0f9ff; border-radius:8px; border:2px solid #3b82f6;">
+    <h3 style="color:#1e40af; margin-bottom:12px; font-size:1.5rem;">סך עלות הפרויקט</h3>
+    <p style="font-size:2.5rem; font-weight:bold; color:#1e40af; margin:0;">₪15,000</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 danielthegoldman@gmail.com | תכנית פיתוח v2.0</p>
+</footer>
+
+</body>
+</html>
